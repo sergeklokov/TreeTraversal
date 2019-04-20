@@ -1,0 +1,7 @@
+C:\Users\aa\source\repos\TreeTraversal\TreeTraversal\obj\Debug\TreeTraversal.csprojAssemblyReference.cache
+C:\Users\aa\source\repos\TreeTraversal\TreeTraversal\obj\Debug\TreeTraversal.csproj.CoreCompileInputs.cache
+C:\Users\aa\source\repos\TreeTraversal\TreeTraversal\bin\Debug\TreeTraversal.exe.config
+C:\Users\aa\source\repos\TreeTraversal\TreeTraversal\bin\Debug\TreeTraversal.exe
+C:\Users\aa\source\repos\TreeTraversal\TreeTraversal\bin\Debug\TreeTraversal.pdb
+C:\Users\aa\source\repos\TreeTraversal\TreeTraversal\obj\Debug\TreeTraversal.exe
+C:\Users\aa\source\repos\TreeTraversal\TreeTraversal\obj\Debug\TreeTraversal.pdb
