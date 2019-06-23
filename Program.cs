@@ -27,37 +27,60 @@ namespace TreeTraversal
         static void Main(string[] args)
         {
             // populate tree
-            BinaryTree tree = new BinaryTree();
-            PopulateBinaryTreeWithValues(tree);
+            var bTreee = new BinaryTree();
+            PopulateBinaryTreeWithValues(bTreee);
 
-            tree.Print(tree.root);
-
+            bTreee.Print(bTreee.root);
             Console.WriteLine();
 
-            BNode lca = tree.findLCA(4, 5);
-            if (lca != null)
-                Console.WriteLine("LCA(4,5) = " + lca.item);
-            else
-                Console.WriteLine("LCA(4,5) not present");
+            Console.WriteLine("Max depth of a tree: " + bTreee.maxDepth(bTreee.root));
+            Console.WriteLine();
 
-            lca = tree.findLCA(4, 10);
+            Console.WriteLine("Lowest Common Ancestor - LCA");
+            Node lca = bTreee.findLCA(6, 7);
+            if (lca != null)
+            {
+                Console.WriteLine("LCA(6,7) = " + lca.item);
+                Console.WriteLine("Max depth of node {0} = {1}", lca.item, bTreee.maxDepth(lca));
+            }
+            else
+            {
+                Console.WriteLine("LCA(4,5) not present");
+            }
+            Console.WriteLine();
+
+            lca = bTreee.findLCA(4, 5);
+            if (lca != null)
+            {
+                Console.WriteLine("LCA(4,5) = " + lca.item);
+                Console.WriteLine("Max depth of node {0} = {1}", lca.item, bTreee.maxDepth(lca));
+            }
+            else
+            {
+                Console.WriteLine("LCA(4,5) not present");
+            }
+            Console.WriteLine();
+
+            lca = bTreee.findLCA(4, 10);
             if (lca != null)
                 Console.WriteLine("LCA(4,10) = " + lca.item);
             else
                 Console.WriteLine("LCA(4,10) not present");
-
             Console.WriteLine();
+
             Console.WriteLine("Print inorder");
-            tree.PrintInorder(tree.root);
+            bTreee.PrintInorder(bTreee.root);
+            Console.WriteLine(System.Environment.NewLine);
 
             var dll = new DoubleLinkedList();
             PopulateDoubleLinkedListWValues(dll);
+            Console.Write("Simple Doubly Linked List: ");
             dll.Print(dll.root);
-
             Console.WriteLine();
+
             Console.WriteLine("Print Binary Tree converted (Inorder) to Double Linked List");
             var dll2 = new DoubleLinkedList();
-            tree.ConvertBTreeToDllInorder(tree.root, dll2);
+            bTreee.ConvertBTreeToDllInorder(bTreee.root, dll2);
             dll2.Print(dll2.root);
 
             Console.WriteLine("Press any key..");
@@ -74,19 +97,19 @@ namespace TreeTraversal
 
         private static void PopulateBinaryTreeWithValues(BinaryTree tree)
         {
-            tree.root = new BNode(1);
+            tree.root = new Node(1);
 
-            tree.root.left = new BNode(2);
-            tree.root.left.left = new BNode(4);
-            tree.root.left.right = new BNode(5);
+            tree.root.left = new Node(2);
+            tree.root.left.left = new Node(4);
+            tree.root.left.right = new Node(5);
 
-            tree.root.right = new BNode(3);
-            tree.root.right.left = new BNode(6);
-            tree.root.right.right = new BNode(7);
+            tree.root.right = new Node(3);
+            tree.root.right.left = new Node(6);
+            tree.root.right.right = new Node(7);
 
-            tree.root.left.left.left = new BNode(8);
-            tree.root.left.right.left = new BNode(9);
-            tree.root.left.right.left = new BNode(10);
+            tree.root.left.left.left = new Node(8);
+            tree.root.left.right.left = new Node(9);
+            tree.root.left.right.left = new Node(10);
         }
     }
 }

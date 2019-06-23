@@ -22,6 +22,7 @@ namespace TreeTraversal
                 node.prev = lastNode;
             }
         }
+
         private DllNode FindLastNode(DllNode node)
         {
             if (node.next != null)
@@ -37,6 +38,7 @@ namespace TreeTraversal
                 Console.WriteLine(" Done.");
                 return;
             }
+
             Console.Write(node.item + " ");
             Print(node.next);
         }

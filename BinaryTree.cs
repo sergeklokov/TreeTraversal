@@ -9,7 +9,7 @@ namespace TreeTraversal
     class BinaryTree
     {
         // Root ot the Binary Tree
-        public BNode root;
+        public Node root;
         public static bool v1 = false;
         public static bool v2 = false;
 
@@ -19,14 +19,14 @@ namespace TreeTraversal
         //
         // v1 is set as true by this function if n1 is found
         // v2 is set as true by this Function if n2 is found
-        public virtual BNode findLCAUtil(BNode node, int n1, int n2)
+        public virtual Node findLCAUtil(Node node, int n1, int n2)
         {
             // Base case
             if (node == null)
                 return null;
 
             //Store result in temp, in case of key match so that we can search for other key also.
-            BNode temp = null;
+            Node temp = null;
 
             // If either n1 or n2 matches with root's key, report the presence
             // by setting v1 or v2 as true and return root (Note that if a key
@@ -44,8 +44,8 @@ namespace TreeTraversal
             }
 
             // Look for keys in left and right subtrees
-            BNode left_lca = findLCAUtil(node.left, n1, n2);
-            BNode right_lca = findLCAUtil(node.right, n1, n2);
+            Node left_lca = findLCAUtil(node.left, n1, n2);
+            Node right_lca = findLCAUtil(node.right, n1, n2);
 
             if (temp != null)
                 return temp;
@@ -60,15 +60,16 @@ namespace TreeTraversal
             return (left_lca != null) ? left_lca : right_lca;
         }
 
+        // Find LCA (Lowest Common Ancestor)
         // Finds lca of n1 and n2 under the subtree rooted with ‘node’
-        public virtual BNode findLCA(int n1, int n2)
+        public virtual Node findLCA(int n1, int n2)
         {
             // Initialize n1 and n2 as not visited
             v1 = false;
             v2 = false;
 
             // Find lca of n1 and n2 using the technique discussed above
-            BNode lca = findLCAUtil(root, n1, n2);
+            Node lca = findLCAUtil(root, n1, n2);
 
             // Return LCA only if both n1 and n2 are present in tree
             if (v1 && v2)
@@ -77,18 +78,35 @@ namespace TreeTraversal
             return null;
         }
 
+        // Find the Maximum Depth or Height of a Tree
+        // https://www.geeksforgeeks.org/write-a-c-program-to-find-the-maximum-depth-or-height-of-a-tree
+        public int maxDepth(Node node)
+        {
+            // Logic depends how we count depth/height. 
+            // If we count from 0, then finish with -1
+            // If we count from 1, then finish with  0
+            if (node == null)
+                return -1;  
+
+            /* compute the depth of each subtree */
+            int lDepth = maxDepth(node.left);
+            int rDepth = maxDepth(node.right);
+
+            /* use the larger one */
+            return lDepth > rDepth ? lDepth + 1 : rDepth + 1;
+        }
+
         // how to print binary tree in console: 
         // https://stackoverflow.com/questions/36311991/c-sharp—display-a—binary—search-tree—in-console/36313190
-
-        public void Print(BNode root, string textFormat = "0", int spacing = 1, int topMargin = 2, int leftMargin = 2)
+        public void Print(Node root, string textFormat = "0", int spacing = 1, int topMargin = 2, int leftMargin = 2)
         {
             if (root == null) return;
             int rootTop = Console.CursorTop + topMargin;
-            var last = new List<BNodeInfo>();
+            var last = new List<NodeInfo>();
             var next = root;
             for (int level = 0; next != null; level++)
             {
-                var item = new BNodeInfo
+                var item = new NodeInfo
                 {
                     node = next,
                     Text = next.item.ToString(textFormat)
@@ -166,7 +184,7 @@ namespace TreeTraversal
         }
 
         // Traverse binary tree inorder
-        public void PrintInorder(BNode node)
+        public void PrintInorder(Node node)
         {
             if (node == null)
                 return;
@@ -178,12 +196,12 @@ namespace TreeTraversal
             PrintInorder(node.right); /* now recur on right child */
         }
 
-        public void ConvertBTreeToDllInorder(BNode node, DoubleLinkedList dllTree)
+        public void ConvertBTreeToDllInorder(Node node, DoubleLinkedList dllTree)
         {
             if (node == null)
                 return;
 
-            ConvertBTreeToDllInorder(node.left, dllTree); /* first recur on left child */
+            ConvertBTreeToDllInorder(node.left, dllTree);  // first recursively convert left subtree 
 
             var dllNode = new DllNode(node.item);
             dllTree.AddNode(dllNode);

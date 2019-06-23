@@ -8,11 +8,21 @@
    /   /
   8  10
 
+Max depth of a tree: 3
+
+Lowest Common Ancestor - LCA
+LCA(6,7) = 3
+Max depth of node 3 = 1
+
 LCA(4,5) = 2
+Max depth of node 2 = 2
+
 LCA(4,10) = 2
 
 Print inorder
-8 4 2 10 5 1 6 3 7 1 2 3 4  Done.
+8 4 2 10 5 1 6 3 7
+
+Simple Doubly Linked List: 1 2 3 4  Done.
 
 Print Binary Tree converted (Inorder) to Double Linked List
 8 4 2 10 5 1 6 3 7  Done.

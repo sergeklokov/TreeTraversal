@@ -7,25 +7,24 @@ using System.Threading.Tasks;
 namespace TreeTraversal
 {
     // Binary Tree Node
-    public class BNode
+    public class Node
     {
         public int item;
 
-        public BNode left;
-        public BNode right;
+        public Node left;
+        public Node right;
 
-        public BNode(int item)
+        public Node(int item)
         {
             this.item = item;
-            left = null;
-            right = null;
+            left = right = null;
         }
     }
 
     // helper class to print Binary Tree
-    public class BNodeInfo
+    public class NodeInfo
     {
-        public BNode node;
+        public Node node;
         public string Text;
         public int StartPos;
         public int Size { get { return Text.Length; } }
@@ -34,6 +33,6 @@ namespace TreeTraversal
             get {  return StartPos + Size; }
             set { StartPos = value - Size; }
         }
-        public BNodeInfo Parent, Left, Right;
+        public NodeInfo Parent, Left, Right;
     }
 }
