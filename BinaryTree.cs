@@ -190,10 +190,18 @@ namespace TreeTraversal
                 return;
 
             PrintInorder(node.left); /* first recur on left child */
-
             Console.Write(node.item + " "); /* then print the data of node */
-
             PrintInorder(node.right); /* now recur on right child */
+        }
+
+        public void PrintPostorder(Node node)
+        {
+            if (node == null)
+                return;
+
+            PrintPostorder(node.left); /* first recur on left child */
+            PrintPostorder(node.right); /* now recur on right child */
+            Console.Write(node.item + " "); /* then print the data of node */
         }
 
         public void ConvertBTreeToDllInorder(Node node, DoubleLinkedList dllTree)

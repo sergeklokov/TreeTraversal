@@ -72,6 +72,10 @@ namespace TreeTraversal
             bTreee.PrintInorder(bTreee.root);
             Console.WriteLine(System.Environment.NewLine);
 
+            Console.WriteLine("Print postorder");
+            bTreee.PrintPostorder(bTreee.root);
+            Console.WriteLine(System.Environment.NewLine);
+
             var dll = new DoubleLinkedList();
             PopulateDoubleLinkedListWValues(dll);
             Console.Write("Simple Doubly Linked List: ");
@@ -107,9 +111,9 @@ namespace TreeTraversal
             tree.root.right.left = new Node(6);
             tree.root.right.right = new Node(7);
 
-            tree.root.left.left.left = new Node(8);
-            tree.root.left.right.left = new Node(9);
-            tree.root.left.right.left = new Node(10);
+            //tree.root.left.left.left = new Node(8);
+            //tree.root.left.right.left = new Node(9);
+            //tree.root.left.right.left = new Node(10);
         }
     }
 }
