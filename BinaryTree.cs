@@ -174,6 +174,8 @@ namespace TreeTraversal
             }
 
             Console.SetCursorPosition(0, rootTop + 2 * last.Count - 1);
+
+            Console.WriteLine();
         }
 
         public void Print(string s, int top, int left, int right = -1)

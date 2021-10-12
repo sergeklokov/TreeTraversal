@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreeTraversal", "TreeTraversal.csproj", "{F539ED1C-A654-4BD4-9574-DE5931853B7C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2AE3EF26-0FD4-4C95-B923-F49ADD1219B1}"
+	ProjectSection(SolutionItems) = preProject
+		ConsoleOutput.txt = ConsoleOutput.txt
+		ReadMe.txt = ReadMe.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F539ED1C-A654-4BD4-9574-DE5931853B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F539ED1C-A654-4BD4-9574-DE5931853B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F539ED1C-A654-4BD4-9574-DE5931853B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F539ED1C-A654-4BD4-9574-DE5931853B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C8671F6-079B-481C-A8C7-2EA13D353852}
+	EndGlobalSection
+EndGlobal

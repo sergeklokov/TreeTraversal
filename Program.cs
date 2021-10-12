@@ -9,7 +9,7 @@ namespace TreeTraversal
     class Program
     {
         // various Tree Traversals demo
-        // by Serge Klokov
+        // by Sam Klok (Serge Klokov)
         //
         // c# implementation of operations with binary tree
         // and with ..
@@ -31,7 +31,7 @@ namespace TreeTraversal
             PopulateBinaryTreeWithValues(bTreee);
 
             bTreee.Print(bTreee.root);
-            Console.WriteLine();
+            
 
             Console.WriteLine("Max depth of a tree: " + bTreee.maxDepth(bTreee.root));
             Console.WriteLine();
