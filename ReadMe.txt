@@ -12,3 +12,9 @@ It also handles cases even when n1 and n2 are not there in Tree
      1
   2    3
 4  5  6  7
+
+
+
+Binary Tree converted to Double Linked List:
+4 2 5 1 6 3 7
+
